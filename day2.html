@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 2</title>
+
+    <style>
+        .my-div {width: 25px; height: 25px;background-color:red; margin:1px;}
+    </style>
+</head>
+<body>
+<div id="outer">
+<div  id="first" class="my-div"><p></p></div>
+<div  id="second" class="my-div"><p></p></div>
+<div  id="third" class="my-div"><p></p></div>
+<div  id="fourth" class="my-div"><p></p></div>
+<div  id="sixth" class="my-div"><p></p></div>
+<div  id="seventh" class="my-div"><p></p></div>
+<div  id="eight" class="my-div"><p></p></div>
+</div>
+<p id="par"></p>
+
+<script>
+
+    const outerDiv = document.getElementById("outer")
+    outerDiv.addEventListener("click", function(event) {
+        const par = document.getElementById("par")
+        par.innerText = "Hi from " + event.target.id
+    });
+
+</script>
+</body>
+</html>

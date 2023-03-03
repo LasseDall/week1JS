@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1px 1px;
+        }
+        .item {
+            background-color: lightskyblue;
+            border: 1px solid #fff;
+            padding: 5px 5px 5px 2em;
+            min-height: 250px;
+        }
+    </style>
+</head>
+<body style="font-family: sans-serif">
+<div style="margin-left: 10%;width: 75%;margin-right: auto">
+    <h2>Car's 'R' Us Client Demo - Version poor ;-)</h2>
+    <div class="parent">
+        <div class="item">
+            <h3>Show all Cars</h3>
+            <button id="btn-get-cars">Get all</button>
+            <table class="table">
+                <thead>
+                <tr><th>ID</th><th>Brand</th><th>Price pr day</th></tr>
+                </thead>
+                <tbody id="table-body-cars"></tbody>
+            </table>
+        </div>
+        <div class="item">
+            <h3>Find a single Car</h3>
+            <label for="text-for-id">Id</label>&nbsp;<input id="text-for-id"/>
+            <button id="btn-single-car">Find</button>
+            <table class="table">
+                <thead>
+                <tr><th>ID</th><th>Brand</th><th>Price pr day</th></tr>
+                </thead>
+                <tbody id="table-body-car"></tbody>
+            </table>
+        </div>
+        <div class="item">
+            <h3>Add a Car</h3>
+            <div><label for="brand">Brand: </label>&nbsp;<input id="brand"/></div>
+            <div><label for="model">Model: </label>&nbsp;<input id="model"/></div>
+            <div><label for="price-pr-day">Price pr day: </label>&nbsp;<input id="price-pr-day"/></div>
+            <div><label for="best-discount">Best discount: </label>&nbsp;<input id="best-discount"/></div>
+            <button id="sub-btn">Submit new item</button>
+        </div>
+        <div class="item">
+            <h3>Edit a Car</h3>
+            <label for="text-for-id2">Id: </label>&nbsp;<input id="text-for-id2"/>
+            <button id="btn-find">Find item to edit</button>
+            <table class="table">
+                <thead>
+                <tr><th>ID</th><th>Brand</th><th>Model</th><th>Price pr day</th><th>Best discount</th></tr>
+                </thead>
+                <tbody id="table-body-car2"></tbody>
+            </table>
+            <label for="new-brand">New brand: </label>&nbsp;<input id="new-brand"/>
+            <br>
+            <label for="new-model">New model: </label>&nbsp;<input id="new-model"/>
+            <br>
+            <label for="new-price">New price (pr day): </label>&nbsp;<input id="new-price"/>
+            <br>
+            <label for="new-discount">New discount: </label>&nbsp;<input id="new-discount"/>
+            <br>
+            <button id="btn-edit">Submit edited item</button>
+        </div>
+    </div>
+</div>
+
+<script src="cars.js"></script>
+</body>
+</html>

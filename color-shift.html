@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color shift</title>
+</head>
+<body>
+<div id="first" style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="second"  style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="third"  style="width: 100px;margin: 1px;">&nbsp;</div>
+<button id="colorshift">Shift color</button>
+
+<script>
+    const divs = document.querySelectorAll("div")
+    divs.forEach(d => d.style.backgroundColor = "red")
+
+    document.getElementById("colorshift").onclick = (evt) => {
+        evt.preventDefault()
+        document.getElementById("first").style.backgroundColor = "green"
+        document.getElementById("second").style.backgroundColor = "blue"
+        document.getElementById("third").style.backgroundColor = "purple"
+
+    }
+</script>
+</body>
+</html>

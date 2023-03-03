@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table class="table" id="table">
+    <thead><tr><th>ID</th><th>Year</th><th>Make</th><th>Model</th><th>Price</th></tr></thead>
+</table>
+
+<div>
+    <label style="padding-right: 6px" for="input-field">Price: </label>
+    <input  id="input-field">
+    <button id="btn-1">Price less than</button>
+    <button id="btn-2">Clear filter</button>
+</div>
+
+
+<script>
+const cars = [
+{ id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
+{ id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
+{ id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
+{ id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
+{ id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
+];
+
+function carFunction(carArray) {
+   return "<thead><tr><th>ID</th><th>Year</th><th>Make</th><th>Model</th><th>Price</th></tr></thead><tbody>" + carArray.map(c => `<tr> <th>${c.id}</th> <th>${c.year}</th><th>${c.make}</th><th>${c.model}</th><th>${c.price}</th></tr>`).join("") + "</tbody>"
+}
+
+const newCars = cars.filter(c => c.year >= 1999)
+const volvos = cars.filter(c => c.make.includes("Volvo"))
+const cheapCars = cars.filter(c => c.price < 5000)
+const table = document.getElementById("table")
+table.innerHTML = carFunction(cars)
+
+const btn1 = document.getElementById("btn-1")
+const btn2 = document.getElementById("btn-2")
+btn1.onclick = filterCars
+btn2.onclick = clearFilter
+
+function clearFilter() {
+    table.innerHTML = carFunction(cars)
+}
+
+
+function filterCars() {
+    const price = document.getElementById("input-field").value
+    const cheapCars = cars.filter(c => c.price < price)
+    table.innerHTML = carFunction(cheapCars)
+}
+</script>
+
+
+</body>
+</html>
