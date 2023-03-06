@@ -1,5 +1,5 @@
 
-const URL = "http://localhost:8080/api/cars"
+const URL = "https://carssemester3.azurewebsites.net/api/cars"
 
 document.getElementById("btn-get-cars").onclick = getAllCars
 document.getElementById("btn-single-car").onclick = getCar
